@@ -1,9 +1,9 @@
 import "../styles/Board.css";
 
-const Board = ({tiles}) => {
+const Board = ({tiles, onClick}) => {
 
     const renderTile = (value, position) => {
-        return <button className="tile" data-testid="tile" key={position}>{value}</button>
+        return <button className="tile" data-testid="tile" key={position} onClick={() => onClick(position)}>{value}</button>
     }
 
     const generateBoard = () => {
