@@ -21,6 +21,19 @@ describe("Tictactoe works fine when", () => {
         });
     });
 
+    it(("marks first tile with X second with O and rest tiles remain empty"), () =>{
+        render(<TicTacToe/>)
+        const tiles = screen.getAllByTestId("tile");
+        const [firstTile, secondTile, ...remainingTiles] = tiles;
+        fireEvent.click(firstTile);
+        expect(firstTile.textContent).toBe(TestConstants.PLAYER_X);
+        fireEvent.click(secondTile);
+        expect(secondTile.textContent).toBe(TestConstants.PLAYER_O);
+        remainingTiles.forEach((tile) => {
+            expect(tile.textContent).toBe(TestConstants.EMPTY)
+        });
+    });
+
 });
 
 
