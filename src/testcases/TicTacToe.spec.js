@@ -10,30 +10,39 @@ describe("Tictactoe works fine when", () => {
         expect(title.textContent).toBe(`${TestConstants.TIC} ${TestConstants.TAC} ${TestConstants.TOE}`)
     });
 
+});
+
+describe("Tictactoe game works fine when", () => {
+
+    let tiles;
+    beforeEach(() => {
+        render(<TicTacToe/>)
+        tiles =screen.getAllByTestId("tile");
+    });
+
+    const checkTileSymbolOnClicking = (tile, expectedSymbol) => {
+        fireEvent.click(tile);
+        expect(tile.textContent).toBe(expectedSymbol);
+      };
+    
+      const checkTileSymbol = (tiles, expectedSymbol) => {
+        tiles.forEach((tile) => {
+          expect(tile.textContent).toBe(expectedSymbol);
+        });
+      };
+
     it(("displays X on clicking a tile and rest tiles remain empty"), () =>{
-        render(<TicTacToe/>)
-        const tiles = screen.getAllByTestId("tile");
         const [firstTile, ...remainingTiles] = tiles;
-        fireEvent.click(firstTile);
-        expect(firstTile.textContent).toBe(TestConstants.PLAYER_X);
-        remainingTiles.forEach((tile) => {
-            expect(tile.textContent).toBe(TestConstants.EMPTY)
-        });
+        checkTileSymbolOnClicking(firstTile,TestConstants.PLAYER_X);
+        checkTileSymbol(remainingTiles,TestConstants.EMPTY);
     });
 
-    it(("marks first tile with X second with O and rest tiles remain empty"), () =>{
-        render(<TicTacToe/>)
-        const tiles = screen.getAllByTestId("tile");
+    it(("marks first tile with X second with O on clicking and rest tiles remain empty"), () =>{
         const [firstTile, secondTile, ...remainingTiles] = tiles;
-        fireEvent.click(firstTile);
-        expect(firstTile.textContent).toBe(TestConstants.PLAYER_X);
-        fireEvent.click(secondTile);
-        expect(secondTile.textContent).toBe(TestConstants.PLAYER_O);
-        remainingTiles.forEach((tile) => {
-            expect(tile.textContent).toBe(TestConstants.EMPTY)
-        });
+        checkTileSymbolOnClicking(firstTile,TestConstants.PLAYER_X);
+        checkTileSymbolOnClicking(secondTile,TestConstants.PLAYER_O);
+        checkTileSymbol(remainingTiles,TestConstants.EMPTY)
     });
-
 });
 
 
