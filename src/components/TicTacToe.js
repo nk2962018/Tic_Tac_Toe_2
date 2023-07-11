@@ -10,6 +10,7 @@ const TicTacToe = () => {
 
   const updatingTileOnClicking = (position) => {
     const updatedTiles = [...tiles];
+    if(updatedTiles[position]) return;
     updatedTiles[position] = currentPlayer === Constants.PLAYER_X ? Constants.PLAYER_X : Constants.PLAYER_O;
     setTiles(updatedTiles);
     nextPlayerTurn();

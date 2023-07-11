@@ -43,6 +43,14 @@ describe("Tictactoe game works fine when", () => {
         checkTileSymbolOnClicking(secondTile,TestConstants.PLAYER_O);
         checkTileSymbol(remainingTiles,TestConstants.EMPTY)
     });
+
+    it(("cannot update an already marked tile"), () =>{
+        tiles.forEach((tile)=>{
+            (tile.textContent != TestConstants.EMPTY) ? 
+            (checkTileSymbolOnClicking(tile,TestConstants.PLAYER_X ) || checkTileSymbolOnClicking(tile,TestConstants.PLAYER_O))
+            : null
+        });
+    });
 });
 
 
