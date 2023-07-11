@@ -1,19 +1,16 @@
 import "../styles/Board.css";
-import { Constants } from "./constants/Constants";
 
-const Board = () => {
+const Board = ({tiles}) => {
 
-    const renderTile = (position) => {
-        return <button className="tile" data-testid="tile" key={position}></button>
+    const renderTile = (value, position) => {
+        return <button className="tile" data-testid="tile" key={position}>{value}</button>
     }
 
     const generateBoard = () => {
-        const tiles = [];
-        for(let i=0; i<Constants.NO_OF_TILES_IN_THE_BOARD; i++){
-            tiles.push(renderTile(i));
+        return tiles.map((value,position) => {
+            return renderTile(value,position)
+            });
         }
-        return tiles;
-    }
 
     return(
         <div className="board" data-testid="board">
