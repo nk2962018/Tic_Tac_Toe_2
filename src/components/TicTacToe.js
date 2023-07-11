@@ -1,4 +1,5 @@
 import "../styles/TicTacToe.css";
+import Board from "./Board";
 import { Constants } from "./constants/Constants";
 
 const TicTacToe = () => {
@@ -7,6 +8,7 @@ const TicTacToe = () => {
     <div className="title" data-testid="title">
       {Constants.TIC} <span className="tac-color">{Constants.TAC}</span> {Constants.TOE} 
     </div>
+    <Board/>
   </div>
   );
 }

@@ -1,0 +1,15 @@
+.board{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 250px;
+    height: 250px;
+    margin: 30px auto 30px auto; 
+}
+
+.tile{
+    border: 2px solid white;
+    cursor: pointer;
+    background-color: transparent;
+    margin: 1px;
+}
