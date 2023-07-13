@@ -88,4 +88,14 @@ export const tilePositionsToDeclareWinner = {
         WINNER : TestConstants.PLAYER_O
     },
 
+    winningPositionsTopRightBottomLeftDiagonal_X : {
+        WINING_POSITIONS : [2,3,4,1,6],
+        WINNER : TestConstants.PLAYER_X
+    },
+
+    winningPositionsTopRightBottomLeftDiagonal_O : {
+        WINING_POSITIONS : [5,2,3,4,1,6],
+        WINNER : TestConstants.PLAYER_O
+    }
+
 }

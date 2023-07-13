@@ -14,7 +14,8 @@ const TicTacToe = () => {
     EMPTY,
     PLAYER_X,
     PLAYER_O,
-    TOP_LEFT_BOTTOM_RIGHT_DIAGONAL_WINNING_POSITION
+    TOP_LEFT_BOTTOM_RIGHT_DIAGONAL_WINNING_POSITION,
+    TOP_RIGHT_BOTTOM_LEFT_DIAGONAL_WINNING_POSITION
   } = Constants;
 
   const [tiles, setTiles] = useState(Array(NO_OF_TILES_IN_THE_BOARD).fill(EMPTY));
@@ -22,6 +23,7 @@ const TicTacToe = () => {
 
   const declareWinner = () => {
     const winningPositions = [
+      TOP_RIGHT_BOTTOM_LEFT_DIAGONAL_WINNING_POSITION,
       TOP_LEFT_BOTTOM_RIGHT_DIAGONAL_WINNING_POSITION,
       ...horizontalWinningPositions,
       ...verticalWinningPositions
