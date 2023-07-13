@@ -100,3 +100,9 @@ export const tilePositionsToDeclareWinner = {
     }
 
 }
+
+export const tilePositionsForMatchDraw = {
+    matchDrawPositions : {
+        DRAW_POSITIONS : [0,1,2,3,6,4,5,8,7]
+    }
+}
