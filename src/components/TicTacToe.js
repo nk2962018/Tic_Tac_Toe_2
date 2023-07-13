@@ -63,7 +63,7 @@ const TicTacToe = () => {
       {TIC} <span className="tac-color">{TAC}</span> {TOE} 
     </div>
     <Board tiles={tiles} onClick={updatingTileOnClicking}/>
-    <Status player={currentPlayer} winner={winner}/>
+    <Status player={currentPlayer} winner={winner} tiles={tiles}/>
   </div>
   );
 }
