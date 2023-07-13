@@ -47,7 +47,7 @@ const TicTacToe = () => {
   
   const updatingTileOnClicking = (position) => {
     const updatedTiles = [...tiles];
-    if(updatedTiles[position]) return;
+    if(winner || updatedTiles[position]) return;
     updatedTiles[position] = currentPlayer === PLAYER_X ? PLAYER_X : PLAYER_O;
     setTiles(updatedTiles);
     nextPlayerTurn();

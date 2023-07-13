@@ -147,6 +147,14 @@ describe("Tictactoe game works fine when", () => {
         declareMatchDraw(tilePositionsForMatchDraw.matchDrawPositions)
     });
 
+    it(("should disable other tiles once there is a winner"), () => {
+        declareWinnerOnMarkingDesiredPositions(tilePositionsToDeclareWinner.winningPositionsTopRightBottomLeftDiagonal_X)
+        expect(tiles[0]).toHaveTextContent(TestConstants.EMPTY)
+        expect(tiles[5]).toHaveTextContent(TestConstants.EMPTY)
+        expect(tiles[7]).toHaveTextContent(TestConstants.EMPTY)
+        expect(tiles[8]).toHaveTextContent(TestConstants.EMPTY)
+    });
+
 });
 
 
