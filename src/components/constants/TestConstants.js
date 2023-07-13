@@ -11,7 +11,8 @@ export const TestConstants = {
     FIRST_ROW_WINNING_POSITION : [0,1,2],
     SECOND_ROW_WINNING_POSITION : [3,4,5],
     THIRD_ROW_WINNING_POSITION : [6,7,8],
-    THIRD_COL_WINNING_POSITION : [2,5,8]
+    THIRD_COL_WINNING_POSITION : [2,5,8],
+    TOP_LEFT_BOTTOM_RIGHT_DIAGONAL_WINNING_POSITION : [0,4,8]
 
 };
 
@@ -74,6 +75,16 @@ export const tilePositionsToDeclareWinner = {
 
     winningPositionsThirdCol_O : {
         WINING_POSITIONS : [0,2,3,5,1,8],
+        WINNER : TestConstants.PLAYER_O
+    },
+
+    winningPositionsTopLeftBottomRightDiagonal_X : {
+        WINING_POSITIONS : [0,3,4,1,8],
+        WINNER : TestConstants.PLAYER_X
+    },
+
+    winningPositionsTopLeftBottomRightDiagonal_O : {
+        WINING_POSITIONS : [2,0,3,4,1,8],
         WINNER : TestConstants.PLAYER_O
     },
 
