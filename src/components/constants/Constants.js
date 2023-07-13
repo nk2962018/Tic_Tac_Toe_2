@@ -22,3 +22,9 @@ export const horizontalWinningPositions = [
     Constants.SECOND_ROW_WINNING_POSITION,
     Constants.THIRD_ROW_WINNING_POSITION
 ];
+
+export const verticalWinningPositions = [
+    Constants.FIRST_COL_WINNING_POSITION,
+    Constants.SECOND_COL_WINNING_POSITION,
+    Constants.THIRD_COL_WINNING_POSITION
+];

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/TicTacToe.css";
 import Board from "./Board";
-import { Constants, horizontalWinningPositions } from "./constants/Constants";
+import { Constants, horizontalWinningPositions, verticalWinningPositions } from "./constants/Constants";
 import Status from "./Status";
 
 const TicTacToe = () => {
@@ -14,9 +14,6 @@ const TicTacToe = () => {
     EMPTY,
     PLAYER_X,
     PLAYER_O,
-    FIRST_COL_WINNING_POSITION,
-    SECOND_COL_WINNING_POSITION,
-    THIRD_COL_WINNING_POSITION
   } = Constants;
 
   const [tiles, setTiles] = useState(Array(NO_OF_TILES_IN_THE_BOARD).fill(EMPTY));
@@ -24,10 +21,8 @@ const TicTacToe = () => {
 
   const declareWinner = () => {
     const winningPositions = [
-      FIRST_COL_WINNING_POSITION, 
-      SECOND_COL_WINNING_POSITION, 
-      THIRD_COL_WINNING_POSITION, 
-      ...horizontalWinningPositions 
+      ...horizontalWinningPositions,
+      ...verticalWinningPositions
     ]
     for(let positions of winningPositions){
       const [winningIndexOne,winningIndexTwo,winningIndexThree] = positions;
