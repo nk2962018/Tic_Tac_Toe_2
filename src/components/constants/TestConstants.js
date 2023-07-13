@@ -46,4 +46,14 @@ export const tilePositionsToDeclareWinner = {
         WINNER : TestConstants.PLAYER_O
     },
 
+    winningPositionsFirstCol_X : {
+        WINING_POSITIONS : [0,4,3,2,6],
+        WINNER : TestConstants.PLAYER_X
+    },
+
+    winningPositionsFirstCol_O : {
+        WINING_POSITIONS : [1,0,5,3,7,6],
+        WINNER : TestConstants.PLAYER_O
+    },
+
 }
