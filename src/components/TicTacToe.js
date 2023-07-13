@@ -19,6 +19,7 @@ const TicTacToe = () => {
     EMPTY,
     PLAYER_X,
     PLAYER_O,
+    RESET_BUTTON_TITLE
   } = Constants;
 
   const [tiles, setTiles] = useState(Array(NO_OF_TILES_IN_THE_BOARD).fill(EMPTY));
@@ -64,6 +65,7 @@ const TicTacToe = () => {
     </div>
     <Board tiles={tiles} onClick={updatingTileOnClicking}/>
     <Status player={currentPlayer} winner={winner} tiles={tiles}/>
+    <button data-testid="reset" className="reset">{RESET_BUTTON_TITLE}</button>
   </div>
   );
 }

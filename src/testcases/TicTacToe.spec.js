@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, getByTestId, render, screen } from "@testing-library/react";
 import TicTacToe from "../components/TicTacToe";
 import { 
     TestConstants, 
@@ -12,6 +12,12 @@ describe("Tictactoe works fine when", () => {
         render(<TicTacToe/>);
         const title = screen.getByTestId("title");
         expect(title.textContent).toBe(`${TestConstants.TIC} ${TestConstants.TAC} ${TestConstants.TOE}`)
+    });
+
+    it(("displays play again button with proper title"), () => {
+        render(<TicTacToe/>)
+        const resetButton = screen.getByTestId("reset");
+        expect(resetButton).toHaveTextContent(TestConstants.RESET_BUTTON_TITLE);
     });
 
 });

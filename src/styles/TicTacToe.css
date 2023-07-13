@@ -16,3 +16,17 @@
 .tac-color{
     color:red;
 }
+
+.reset{
+    background-color: mediumblue;
+    padding: 10px;
+    width: 224px;
+    border: 1px solid mediumblue;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin:1px;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+}
