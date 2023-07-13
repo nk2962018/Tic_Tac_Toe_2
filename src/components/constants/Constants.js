@@ -9,5 +9,6 @@ export const Constants = {
     NEXT_PLAYER_TURN_MESSAGE : "Next Player : ",
     DECLARE_WINNER_MESSAGE : "The Winner is : ",
     FIRST_ROW_WINNING_POSITION : [0,1,2],
-    SECOND_ROW_WINNING_POSITION : [3,4,5]
+    SECOND_ROW_WINNING_POSITION : [3,4,5],
+    THIRD_ROW_WINNING_POSITION : [6,7,8],
 };

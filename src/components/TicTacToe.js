@@ -15,14 +15,15 @@ const TicTacToe = () => {
     PLAYER_X,
     PLAYER_O,
     FIRST_ROW_WINNING_POSITION,
-    SECOND_ROW_WINNING_POSITION
+    SECOND_ROW_WINNING_POSITION,
+    THIRD_ROW_WINNING_POSITION
   } = Constants;
 
   const [tiles, setTiles] = useState(Array(NO_OF_TILES_IN_THE_BOARD).fill(EMPTY));
   const [currentPlayer, setCurrentPlayer] = useState(Constants.PLAYER_X);
 
   const declareWinner = () => {
-    const winningPositions = [FIRST_ROW_WINNING_POSITION, SECOND_ROW_WINNING_POSITION]
+    const winningPositions = [FIRST_ROW_WINNING_POSITION, SECOND_ROW_WINNING_POSITION, THIRD_ROW_WINNING_POSITION]
     for(let positions of winningPositions){
       const [winningIndexOne,winningIndexTwo,winningIndexThree] = positions;
       if (
