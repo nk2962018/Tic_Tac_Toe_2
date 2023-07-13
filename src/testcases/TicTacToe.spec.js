@@ -163,6 +163,17 @@ describe("Tictactoe game works fine when", () => {
         expect(tiles[8]).toHaveTextContent(TestConstants.EMPTY)
     });
 
+    it(("should reset the game on clicking the play again button"), ()=>{
+        const reset = screen.getByTestId("reset");
+        fireEvent.click(reset);
+        tiles.forEach((tile)=>{
+          expect(tile).toHaveTextContent(TestConstants.EMPTY)
+        });
+        const { NEXT_PLAYER_TURN_MESSAGE, PLAYER_X } = TestConstants;
+        const status = screen.getByTestId("status");
+        expect(status).toHaveTextContent(`${NEXT_PLAYER_TURN_MESSAGE}${PLAYER_X}`);
+    });
+
 });
 
 

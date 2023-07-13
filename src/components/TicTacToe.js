@@ -58,6 +58,11 @@ const TicTacToe = () => {
     setCurrentPlayer(currentPlayer === PLAYER_X ? PLAYER_O : PLAYER_X );
   }
 
+  const resetGame = () => {
+    setTiles(Array(NO_OF_TILES_IN_THE_BOARD).fill(EMPTY));
+    setCurrentPlayer(PLAYER_X);
+  }
+
   return (
   <div className="tictactoe-container" data-testid="tictactoe">
     <div className="title" data-testid="title">
@@ -65,7 +70,7 @@ const TicTacToe = () => {
     </div>
     <Board tiles={tiles} onClick={updatingTileOnClicking}/>
     <Status player={currentPlayer} winner={winner} tiles={tiles}/>
-    <button data-testid="reset" className="reset">{RESET_BUTTON_TITLE}</button>
+    <button data-testid="reset" className="reset" onClick={resetGame}>{RESET_BUTTON_TITLE}</button>
   </div>
   );
 }
