@@ -104,6 +104,14 @@ describe("Tictactoe game works fine when", () => {
         declareWinnerOnMarkingDesiredPositions(tilePositionsToDeclareWinner.winningPositionsSecondCol_O)
     });
 
+    it(("displays winning message for X when it marks all the third col winning positions"), () => {
+        declareWinnerOnMarkingDesiredPositions(tilePositionsToDeclareWinner.winningPositionsThirdCol_X)
+    });
+    
+    it(("displays winning message for O when it marks all the third col winning positions"), () => {
+        declareWinnerOnMarkingDesiredPositions(tilePositionsToDeclareWinner.winningPositionsThirdCol_O)
+    });
+
 });
 
 
